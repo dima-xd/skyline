@@ -30,6 +30,11 @@ abstract class OnScreenButton(
          * Aspect ratio the default values were based on
          */
         const val CONFIGURED_ASPECT_RATIO = 2074f / 874f
+
+        /**
+         * Default color for button symbols
+         */
+        const val CONFIGURED_COLOR_HEX = "#c0c6c9"
     }
 
     val config = if (onScreenControllerView.isInEditMode) ControllerConfigurationDummy(defaultRelativeX, defaultRelativeY)
@@ -37,7 +42,7 @@ abstract class OnScreenButton(
 
     protected val drawable = ContextCompat.getDrawable(onScreenControllerView.context, drawableId)!!
 
-    private val buttonSymbolPaint = Paint().apply { color = Color.GRAY }
+    private val buttonSymbolPaint = Paint().apply { color = Color.parseColor(CONFIGURED_COLOR_HEX) }
     private val textBoundsRect = Rect()
 
     var relativeX = config.relativeX

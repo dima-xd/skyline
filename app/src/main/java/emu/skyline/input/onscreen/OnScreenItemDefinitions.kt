@@ -208,15 +208,15 @@ class TriggerButton(
 )
 
 class Controls(onScreenControllerView : OnScreenControllerView) {
-    private val buttonA = CircularButton(onScreenControllerView, A, 0.95f, 0.65f, 0.025f)
-    private val buttonB = CircularButton(onScreenControllerView, B, 0.9f, 0.75f, 0.025f)
-    private val buttonX = CircularButton(onScreenControllerView, X, 0.9f, 0.55f, 0.025f)
-    private val buttonY = CircularButton(onScreenControllerView, Y, 0.85f, 0.65f, 0.025f)
+    private val buttonA = CircularButton(onScreenControllerView, A, 0.92f, 0.52f, 0.025f)
+    private val buttonB = CircularButton(onScreenControllerView, B, 0.87f, 0.62f, 0.025f)
+    private val buttonX = CircularButton(onScreenControllerView, X, 0.87f, 0.42f, 0.025f)
+    private val buttonY = CircularButton(onScreenControllerView, Y, 0.82f, 0.52f, 0.025f)
 
-    private val buttonDpadLeft = CircularButton(onScreenControllerView, DpadLeft, 0.2f, 0.65f, 0.025f)
-    private val buttonDpadUp = CircularButton(onScreenControllerView, DpadUp, 0.25f, 0.55f, 0.025f)
-    private val buttonDpadRight = CircularButton(onScreenControllerView, DpadRight, 0.3f, 0.65f, 0.025f)
-    private val buttonDpadDown = CircularButton(onScreenControllerView, DpadDown, 0.25f, 0.75f, 0.025f)
+    private val buttonDpadLeft = CircularButton(onScreenControllerView, DpadLeft, 0.15f, 0.52f, 0.025f)
+    private val buttonDpadUp = CircularButton(onScreenControllerView, DpadUp, 0.20f, 0.42f, 0.025f)
+    private val buttonDpadRight = CircularButton(onScreenControllerView, DpadRight, 0.25f, 0.52f, 0.025f)
+    private val buttonDpadDown = CircularButton(onScreenControllerView, DpadDown, 0.20f, 0.62f, 0.025f)
 
     private val buttonL = RectangularButton(onScreenControllerView, L, 0.1f, 0.25f, 0.09f, 0.1f)
     private val buttonR = RectangularButton(onScreenControllerView, R, 0.9f, 0.25f, 0.09f, 0.1f)
@@ -231,14 +231,14 @@ class Controls(onScreenControllerView : OnScreenControllerView) {
     val buttonPairs = circularButtonPairs + triggerButtonPairs
 
     val circularButtons = circularButtonPairs.flatten() + listOf(
-        CircularButton(onScreenControllerView, Plus, 0.57f, 0.75f, 0.025f),
-        CircularButton(onScreenControllerView, Minus, 0.43f, 0.75f, 0.025f),
-        CircularButton(onScreenControllerView, Menu, 0.5f, 0.75f, 0.025f)
+        CircularButton(onScreenControllerView, Plus, 0.57f, 0.88f, 0.025f),
+        CircularButton(onScreenControllerView, Minus, 0.43f, 0.88f, 0.025f),
+        CircularButton(onScreenControllerView, Menu, 0.5f, 0.88f, 0.025f)
     )
 
     val joysticks = listOf(
-        JoystickButton(onScreenControllerView, Left, 0.1f, 0.8f, 0.05f),
-        JoystickButton(onScreenControllerView, Right, 0.75f, 0.6f, 0.05f)
+        JoystickButton(onScreenControllerView, Left, 0.12f, 0.78f, 0.05f),
+        JoystickButton(onScreenControllerView, Right, 0.8f, 0.78f, 0.05f)
     )
 
     val rectangularButtons = listOf(buttonL, buttonR)
