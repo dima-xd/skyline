@@ -78,7 +78,7 @@ namespace skyline::service::account {
         if (id == UserId{})
             return result::NullArgument;
 
-        manager.RegisterService(SRVREG(IManagerForApplication), session, response);
+        manager.RegisterService(std::make_shared<IManagerForApplication>(state, manager, openedUsers), session, response);
         return {};
     }
 
@@ -96,7 +96,7 @@ namespace skyline::service::account {
 
     Result IAccountServiceForApplication::ListOpenContextStoredUsers(type::KSession &session, ipc::IpcRequest &request, ipc::IpcResponse &response) {
         try {
-            return WriteUserList(request.outputBuf.at(0), {constant::DefaultUserId});
+            return WriteUserList(request.outputBuf.at(0), openedUsers);
         } catch (const std::out_of_range &) {
             return result::InvalidInputBuffer;
         }
