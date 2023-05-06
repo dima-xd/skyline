@@ -57,6 +57,8 @@
 #include "ro/IRoInterface.h"
 #include "mii/IStaticService.h"
 #include "olsc/IOlscServiceForApplication.h"
+#include "clkrst/IClkrstManager.h"
+#include "psm/IPsmServer.h"
 #include "serviceman.h"
 
 #define SERVICE_CASE(class, name, ...) \
@@ -144,6 +146,8 @@ namespace skyline::service {
             SERVICE_CASE(mii::IStaticService, "mii:e")
             SERVICE_CASE(mii::IStaticService, "mii:u")
             SERVICE_CASE(olsc::IOlscServiceForApplication, "olsc:u")
+            SERVICE_CASE(clkrst::IClkrstManager, "clkrst")
+            SERVICE_CASE(psm::IPsmServer, "psm")
             default:
                 std::string_view nameString(span(reinterpret_cast<char *>(&name), sizeof(name)).as_string(true));
                 throw std::out_of_range(fmt::format("CreateService called with an unknown service name: {}", nameString));
